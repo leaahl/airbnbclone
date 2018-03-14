@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
 
   def search
-  	
+
   	if params[:search].present? && params[:search].strip != ""
   		session[:loc_search] = params[:search]
   	end
@@ -31,7 +31,7 @@ class PagesController < ApplicationController
 
   			not_available = room.reservations.where(
   					"(? <= start_date AND start_date <= ?)
-  					OR (? <= end_date AND end_date <= ?) 
+  					OR (? <= end_date AND end_date <= ?)
   					OR (start_date < ? AND ? < end_date)",
   					start_date, end_date,
   					start_date, end_date,
@@ -39,8 +39,8 @@ class PagesController < ApplicationController
   				).limit(1)
 
   			if not_available.length > 0
-  				@arrRooms.delete(room)	
-  			end	
+  				@arrRooms.delete(room)
+  			end
 
   		end
 

@@ -31,6 +31,8 @@ gem 'thin'
 
 gem 'ransack'
 
+gem 'activeadmin'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'byebug'
